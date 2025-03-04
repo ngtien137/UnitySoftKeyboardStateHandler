@@ -1,24 +1,27 @@
 using UnityEngine;
 
-public class ToolKeyboardBootstraps : MonoBehaviour
+namespace Venaluza
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    public static void GenerateGameBootstrapComponent()
+    public class ToolKeyboardBootstraps : MonoBehaviour
     {
-        // Tìm thử instance
-        var existing = Object.FindObjectOfType<KeyboardPluginCaller>();
-        if (existing == null)
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void GenerateGameBootstrapComponent()
         {
-            var prefab = Resources.Load<GameObject>("KeyboardPluginCaller");
-            if (prefab != null)
+            // Tìm thử instance
+            var existing = Object.FindObjectOfType<KeyboardPluginCaller>();
+            if (existing == null)
             {
-                var obj = Object.Instantiate(prefab);
-                Object.DontDestroyOnLoad(obj);
+                var prefab = Resources.Load<GameObject>("KeyboardPluginCaller");
+                if (prefab != null)
+                {
+                    var obj = Object.Instantiate(prefab);
+                    Object.DontDestroyOnLoad(obj);
+                }
+            }
+            else
+            {
+                // Đã có rồi thì không tạo mới
             }
         }
-        else
-        {
-            // Đã có rồi thì không tạo mới
-        }
-    }
+    }    
 }
