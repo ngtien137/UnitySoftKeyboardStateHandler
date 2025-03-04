@@ -1,0 +1,16 @@
+{
+  "name": "com.venaluza.keyboardplugin",
+  "version": "1.0.0",
+  "displayName": "Keyboard Plugin",
+  "description": "A Unity plugin to handle keyboard height events from Android.",
+  "unity": "2020.3",
+  "author": {
+    "name": "Tiến UU",
+    "email": "ngtien137@gmail.com",
+    "url": "https://yourwebsite.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngtien137/UnitySoftKeyboardStateHandler.git"
+  }
+}
