@@ -108,6 +108,7 @@ private void OnKeyboardStateChanged(bool isVisible, int height)
 }
 
 ```
+> **Note**: On certain devices, the *OnKeyboardStateChanged* function may be invoked multiple times for a single keyboard state change. Be sure to implement proper debouncing or state tracking logic to handle these redundant calls.
 > **Tip**: You can place this code in any MonoBehaviour that needs to react to keyboard changes. 
 
 ### 4. Adjusting UI or Layouts
